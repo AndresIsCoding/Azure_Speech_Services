@@ -17,7 +17,7 @@ speech_config.speech_synthesis_voice_name = "es-CO-GonzaloNeural"
 
 # Configurar la salida de audio
 timestamp = datetime.now().strftime("%d_%m_%Y_%H%M%S")
-audio_config = speechsdk.audio.AudioOutputConfig(filename=os.path.join(output_dir, f"salida_{timestamp}.wav"))
+audio_config = speechsdk.audio.AudioOutputConfig(filename=os.path.join(output_dir, f"salida_{timestamp}_TTS.wav"))
 synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
 
 text_to_speech = input("Por favor, dime que quieres que diga:")
