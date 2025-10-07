@@ -4,10 +4,11 @@ from procesor import procesor
 import pygame
 import os
 
+voz_femenina = [False]
 
 def Action():
     voice_input: str = STT()
-
+    print(voice_input)
     # remove symbols
     voice_input = voice_input.replace("?", "")
     voice_input = voice_input.replace("¿", "")
@@ -15,8 +16,8 @@ def Action():
     voice_input = voice_input.replace(".", "")
     voice_input = voice_input.casefold()
     commands = voice_input.split(" ")
-    respuesta = procesor(commands)
-    TTS(respuesta)
+    respuesta = procesor(commands, voz_femenina)
+    TTS(respuesta, voz_femenina[0])
 
 
 pygame.init()
